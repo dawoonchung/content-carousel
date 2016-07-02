@@ -1,0 +1,22 @@
+{
+  "name": "simple-carousel",
+  "description": "An easy and simple carousel slider",
+  "version": "0.1.0",
+  "author": "Da-Woon Chung <dorapen@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dorapen/simple-carousel"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "babel-cli": "*",
+    "babel-preset-es2015": "*",
+    "grunt": "*",
+    "grunt-babel": "*",
+    "grunt-contrib-jshint": "*",
+    "grunt-contrib-uglify": "*",
+    "grunt-contrib-watch": "*",
+    "load-grunt-tasks": "*"
+  },
+  "license": "MIT"
+}
