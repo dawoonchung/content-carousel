@@ -1,1 +1,26 @@
+$icon-font-path: "fonts/bootstrap/";
 @import 'bootstrap';
+
+.carousel {
+  display: block;
+  overflow: hidden;
+  position: relative;
+
+  .carousel-inner {
+    display: none;
+  }
+
+  .carousel-table {
+    display: table;
+    transition: transform 0.5s;
+
+    .carousel-inner {
+      display: table-row;
+    }
+  }
+
+  .carousel-item {
+    display: table-cell;
+    vertical-align: middle;
+  }
+}

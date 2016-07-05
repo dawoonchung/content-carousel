@@ -34,11 +34,38 @@ module.exports = function( grunt ) {
       }
     },
 
+    sass: {
+      options: {
+        style: 'expanded'
+      },
+      dist: {
+        files: {
+          'style.css' : 'stylesheets/style.scss'
+        }
+      }
+    },
+
     watch: {
-      files: [ '<%= jshint.files %>' ],
-      tasks: [ 'jshint', 'babel', 'uglify' ]
+      src: {
+        files: [ '<%= jshint.files %>' ],
+        tasks: [ 'jshint', 'babel' ]
+      },
+      sass: {
+        files: [ 'stylesheets/**/*.scss' ],
+        tasks: [ 'sass' ]
+      }
+    },
+
+    concurrent: {
+      options: {
+        logConcurrentOutput: true
+      },
+      watchall: {
+        tasks: [ 'watch:src', 'watch:sass' ]
+      }
     }
   } );
 
-  grunt.registerTask( 'default', [ 'jshint', 'babel', 'uglify' ] );
+  grunt.registerTask( 'default', [ 'jshint', 'babel', 'uglify', 'sass' ] );
+  grunt.registerTask( 'watchall', [ 'concurrent:watchall' ] );
 };

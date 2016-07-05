@@ -12,7 +12,9 @@
     "babel-preset-es2015": "*",
     "grunt": "*",
     "grunt-babel": "*",
+    "grunt-concurrent": "*",
     "grunt-contrib-jshint": "*",
+    "grunt-contrib-sass": "*",
     "grunt-contrib-uglify": "*",
     "grunt-contrib-watch": "*",
     "load-grunt-tasks": "*"
