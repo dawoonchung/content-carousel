@@ -1,16 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Simple Content Slider</title>
-    <link href="style.css" rel="stylesheet">
-  </head>
-  <body>
-    <h1>Simple Content Slider</h1>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Simple Carousel</title>
+		<link href="style.css" rel="stylesheet">
+	</head>
+	<body>
+		<h1>Simple Carousel</h1>
 
+		<div class="carousel" id="test">
+			<div class="carousel-item">
+				<p>A simple carousel optimised for displaying HTML contents.</p>
+			</div>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-  </body>
+			<div class="carousel-item">
+				<p style="text-align: center;"><span style="font-size: 24px;"><span style="font-size: 50px;"><strong>86</strong></span> students from <span style="font-size: 50px;"><strong>9</strong></span> disciplines and <span style="font-size: 50px;"><strong>6</strong></span> Finnish universities</span>
+					<span style="font-size: 24px;"> tackling <span style="font-size: 50px;"><strong>7</strong></span> high-level complex challenges</span>
+					<span style="font-size: 24px;"> from <span style="font-size: 50px;"><strong>4</strong></span> Finnish ministries and Prime Minister's office</span>
+					<span style="font-size: 24px;"> since <span style="font-size: 50px;"><strong>2014</strong></span>.</span></p>
+				<p style="text-align: right;">Read More</p>
+
+				<table>
+					<tbody>
+						<tr>
+							<td style="text-align: center;">10 credits (ECTS)</td>
+							<td style="text-align: center;">14 weeks (Feb-May)</td>
+							<td style="text-align: center;">Advanved Studio Course</td>
+							<td style="text-align: center;">Creative Sustainability	Master's Programme</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+		<script src="es5/main.js"></script>
+
+		<script>
+        var carousel = new Carousel();
+        carousel.init();
+		</script>
+	</body>
 </html>

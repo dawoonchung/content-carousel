@@ -1,6 +1,6 @@
 {
-  "name": "simple-carousel",
-  "description": "An easy and simple carousel slider",
+  "name": "content-carousel",
+  "description": "A simple content slider",
   "version": "0.1.0",
   "author": "Da-Woon Chung <dorapen@gmail.com>",
   "repository": {
@@ -9,7 +9,6 @@
   },
   "dependencies": {},
   "devDependencies": {
-    "babel-cli": "*",
     "babel-preset-es2015": "*",
     "grunt": "*",
     "grunt-babel": "*",
