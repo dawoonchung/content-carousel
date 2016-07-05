@@ -48,13 +48,17 @@ var Carousel = function ($) {
         var output = '<ol class="carousel-nav">';
 
         $item.each(function () {
-          output += '<li data-target="' + target + '" data-slide-to="' + count++ + '"></li>';
+          if (count === 0) {
+            output += '<li class="active" data-target="' + target + '" data-slide-to="' + count++ + '"></li>';
+          } else {
+            output += '<li data-target="' + target + '" data-slide-to="' + count++ + '"></li>';
+          }
         });
 
         output += '</ol>';
 
-        output += '<a class="carousel-prev glyphicon glyphicon-chevron-left" data-target="' + target + '"></a>';
-        output += '<a class="carousel-next glyphicon glyphicon-chevron-right" data-target="' + target + '"></a>';
+        output += '<a class="carousel-arrow carousel-prev glyphicon glyphicon-chevron-left" data-target="' + target + '"></a>';
+        output += '<a class="carousel-arrow carousel-next glyphicon glyphicon-chevron-right" data-target="' + target + '"></a>';
 
         $(target).append(output);
       }
@@ -95,7 +99,7 @@ var Carousel = function ($) {
       value: function prev(target) {
         var currentSlide = $(target).attr('data-current');
         var itemNum = $(target).find('.carousel-item').length;
-        var slideTo = currentSlide === 0 ? itemNum - 1 : --currentSlide;
+        var slideTo = currentSlide == '0' ? itemNum - 1 : --currentSlide;
 
         $(target).attr('data-current', slideTo);
         this.slid(target, slideTo);
@@ -113,8 +117,11 @@ var Carousel = function ($) {
     }, {
       key: 'slid',
       value: function slid(target, slideTo) {
+        var currentNav = $(target).find('.carousel-nav li.active');
         var itemNum = $(target).find('.carousel-item').length;
         var targetPos = slideTo * -100 / itemNum;
+
+        currentNav.removeClass('active').siblings('[data-slide-to=' + slideTo + ']').addClass('active');
         $(target).find('.carousel-table').css('transform', 'translateX(' + targetPos + '%)');
       }
     }]);

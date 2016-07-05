@@ -35,13 +35,17 @@ const Carousel = (($) => {
       let output = '<ol class="carousel-nav">'
 
       $item.each(function() {
-        output  += `<li data-target="${target}" data-slide-to="${count++}"></li>`
+        if (count === 0) {
+          output  += `<li class="active" data-target="${target}" data-slide-to="${count++}"></li>`
+        } else {
+          output  += `<li data-target="${target}" data-slide-to="${count++}"></li>`
+        }
       })
 
       output    += '</ol>'
 
-      output    += `<a class="carousel-prev glyphicon glyphicon-chevron-left" data-target="${target}"></a>`
-      output    += `<a class="carousel-next glyphicon glyphicon-chevron-right" data-target="${target}"></a>`
+      output    += `<a class="carousel-arrow carousel-prev glyphicon glyphicon-chevron-left" data-target="${target}"></a>`
+      output    += `<a class="carousel-arrow carousel-next glyphicon glyphicon-chevron-right" data-target="${target}"></a>`
 
       $(target).append(output)
 
@@ -80,7 +84,7 @@ const Carousel = (($) => {
     prev(target) {
       let currentSlide = $(target).attr('data-current')
       let itemNum      = $(target).find('.carousel-item').length
-      let slideTo      = (currentSlide === 0) ? itemNum-1 : --currentSlide
+      let slideTo      = (currentSlide == '0') ? itemNum-1 : --currentSlide
 
       $(target).attr('data-current', slideTo)
       this.slid(target, slideTo)
@@ -96,8 +100,11 @@ const Carousel = (($) => {
     }
 
     slid(target, slideTo) {
+      let currentNav   = $(target).find('.carousel-nav li.active')
       let itemNum   = $(target).find('.carousel-item').length
       let targetPos = (slideTo * -100)/itemNum
+
+      currentNav.removeClass('active').siblings(`[data-slide-to=${slideTo}]`).addClass('active')
       $(target).find('.carousel-table').css('transform', `translateX(${targetPos}%)`)
     }
   }

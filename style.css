@@ -7347,14 +7347,65 @@ button.close {
 }
 .carousel .carousel-table {
   display: table;
-  transition: transform 0.5s;
+  transition: transform .5s;
 }
 .carousel .carousel-table .carousel-inner {
   display: table-row;
 }
 .carousel .carousel-item {
   display: table-cell;
+  padding-bottom: 40px;
   vertical-align: middle;
+}
+.carousel .carousel-nav {
+  bottom: 0;
+  height: 40px;
+  line-height: 40px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  text-align: center;
+  width: 100%;
+}
+.carousel .carousel-nav li {
+  border: 1px solid #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+  display: inline-block;
+  height: 10px;
+  margin: 0 2.5px;
+  width: 10px;
+}
+.carousel .carousel-nav li.active {
+  background: #ffffff;
+}
+.carousel .carousel-arrow {
+  cursor: pointer;
+  height: auto;
+  opacity: .8;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-25px);
+  width: auto;
+}
+.carousel .carousel-arrow::before {
+  display: inline-block;
+  font-size: 40px;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  width: 50px;
+}
+.carousel .carousel-arrow:hover {
+  opacity: 1;
+}
+.carousel .carousel-arrow.carousel-prev {
+  left: 0;
+}
+.carousel .carousel-arrow.carousel-next {
+  right: 0;
 }
 
 /*# sourceMappingURL=style.css.map */
