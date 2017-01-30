@@ -67,5 +67,6 @@ module.exports = function( grunt ) {
   } );
 
   grunt.registerTask( 'default', [ 'jshint', 'babel', 'uglify', 'sass' ] );
+  grunt.registerTask( 'js', [ 'jshint', 'babel', 'uglify' ] );
   grunt.registerTask( 'watchall', [ 'concurrent:watchall' ] );
 };
